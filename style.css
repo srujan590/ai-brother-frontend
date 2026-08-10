@@ -1,0 +1,1898 @@
+/* -------------------- */
+/* AI BROTHER STYLE V2 */
+/* -------------------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#202123;
+
+    color:white;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+/* Main Layout */
+
+.app{
+
+    display:flex;
+
+    height:100vh;
+
+    width:100%;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    width:280px;
+
+    background:#171717;
+
+    border-right:1px solid #2e2e2e;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:20px;
+
+}
+
+/* Logo */
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+/* New Chat Button */
+
+.new-chat{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.new-chat:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* Search */
+
+.search-box{
+
+    margin-top:20px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:none;
+
+    outline:none;
+
+    background:#2d2d2d;
+
+    color:white;
+
+}
+
+/* History */
+
+.history{
+
+    margin-top:30px;
+
+    overflow-y:auto;
+
+}
+
+.history h3{
+
+    color:#9ca3af;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+
+    margin-top:20px;
+
+}
+
+.history-item{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    margin-bottom:8px;
+
+    transition:.3s;
+
+}
+
+.history-item:hover{
+
+    background:#2c2c2c;
+
+}
+
+/* Main Chat */
+
+.main-chat{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#343541;
+
+}
+
+/* Top Bar */
+
+.top-bar{
+
+    height:70px;
+
+    border-bottom:1px solid #4b4b4b;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 25px;
+
+}
+
+.top-bar h2{
+
+    font-size:24px;
+
+}
+
+.profile{
+
+    background:#2563eb;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+/* Chat Area */
+
+#chat-box{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:35px;
+
+}
+
+/* Welcome */
+
+.welcome{
+
+    text-align:center;
+
+    margin-top:80px;
+
+    margin-bottom:50px;
+
+}
+
+.welcome h1{
+
+    background:none;
+
+    font-size:42px;
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+.welcome p{
+
+    color:#d1d5db;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+/* ========================= */
+/* AI Brother Chat Messages  */
+/* ========================= */
+
+.bot-message{
+
+    background:#444654;
+
+    color:white;
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    width:fit-content;
+
+    max-width:75%;
+
+    margin-bottom:18px;
+
+    line-height:1.6;
+
+    animation:fadeIn .3s ease;
+
+}
+
+.user-message{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    width:fit-content;
+
+    max-width:75%;
+
+    margin-left:auto;
+
+    margin-bottom:18px;
+
+    line-height:1.6;
+
+    animation:fadeIn .3s ease;
+
+}
+
+/* ========================= */
+/* Input Area                */
+/* ========================= */
+
+.input-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:20px;
+
+    background:#40414f;
+
+    border-top:1px solid #555;
+
+}
+
+#user-input{
+
+    flex:1;
+
+    background:#2b2c37;
+
+    color:white;
+
+    border:none;
+
+    outline:none;
+
+    padding:15px 20px;
+
+    font-size:16px;
+
+    border-radius:30px;
+
+}
+
+#user-input::placeholder{
+
+    color:#bdbdbd;
+
+}
+
+.icon-btn{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#555;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
+
+    flex-shrink:0;
+
+}
+
+.icon-btn:hover{
+
+    background:#2563EB;
+
+    transform:scale(1.08);
+
+}
+
+
+#send-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#send-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:scale(1.08);
+
+}
+
+/* ========================= */
+/* Scrollbar                 */
+/* ========================= */
+
+#chat-box::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+#chat-box::-webkit-scrollbar-track{
+
+    background:#2f303b;
+
+}
+
+#chat-box::-webkit-scrollbar-thumb{
+
+    background:#666;
+
+    border-radius:10px;
+
+}
+
+#chat-box::-webkit-scrollbar-thumb:hover{
+
+    background:#888;
+
+}
+
+/* ========================= */
+/* Animation                 */
+/* ========================= */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ================================= */
+/* PART 3 - AI BROTHER PROFESSIONAL  */
+/* ================================= */
+
+/* Hover effect for messages */
+
+.bot-message:hover,
+.user-message:hover{
+
+    transform:translateY(-2px);
+
+    transition:.25s;
+
+}
+
+/* Chat Timestamp */
+
+.time{
+
+    display:block;
+
+    font-size:11px;
+
+    color:#bdbdbd;
+
+    margin-top:6px;
+
+    text-align:right;
+
+}
+
+/* Typing Animation */
+
+.typing{
+
+    width:70px;
+
+    display:flex;
+
+    justify-content:space-evenly;
+
+    align-items:center;
+
+    background:#444654;
+
+    padding:14px;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+}
+
+.typing span{
+
+    width:8px;
+
+    height:8px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:blink 1.2s infinite;
+
+}
+
+.typing span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes blink{
+
+    0%{
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.2;
+
+    }
+
+}
+
+/* Smooth Buttons */
+
+button{
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* Search Box */
+
+.search-box input:focus{
+
+    border:2px solid #2563eb;
+
+}
+
+/* Input Focus */
+
+#user-input:focus{
+
+    box-shadow:0 0 12px rgba(37,99,235,.45);
+
+}
+
+/* Sidebar Scroll */
+
+.history{
+
+    scrollbar-width:thin;
+
+}
+
+.history::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.history::-webkit-scrollbar-thumb{
+
+    background:#666;
+
+    border-radius:20px;
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.sidebar{
+
+    width:85px;
+
+}
+
+.logo span{
+
+    display:none;
+
+}
+
+.new-chat{
+
+    font-size:13px;
+
+    padding:12px;
+
+}
+
+.search-box{
+
+    display:none;
+
+}
+
+.history h3{
+
+    display:none;
+
+}
+
+.history-item{
+
+    font-size:12px;
+
+}
+
+.top-bar h2{
+
+    font-size:20px;
+
+}
+
+.welcome h1{
+
+    font-size:30px;
+
+}
+
+.welcome p{
+
+    font-size:15px;
+
+}
+
+}
+
+@media(max-width:650px){
+
+.sidebar{
+
+    display:none;
+
+}
+
+.main-chat{
+
+    width:100%;
+
+}
+
+.input-area{
+
+    padding:12px;
+
+}
+
+#user-input{
+
+    font-size:15px;
+
+}
+
+}
+
+/* Nice Selection */
+
+::selection{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* Fade Entire Page */
+
+body{
+
+    animation:pageLoad .5s ease;
+
+}
+
+@keyframes pageLoad{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+/* ===========================
+      PROFILE
+=========================== */
+
+.profile{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.profile-avatar{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+background:#2563EB;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+font-size:20px;
+
+font-weight:bold;
+
+}
+
+.profile-details{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.profile-details span{
+
+font-weight:600;
+
+}
+
+.profile-details small{
+
+color:#777;
+
+font-size:12px;
+
+}
+
+#logout-btn{
+
+margin-left:15px;
+
+padding:10px 18px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+background:#EF4444;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+#logout-btn:hover{
+
+background:#DC2626;
+
+}
+/* ==============================
+      Copy Button
+============================== */
+
+/* ===============================
+      Message Footer
+================================ */
+
+.message-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:10px;
+
+}
+
+/* Time */
+
+.message-footer .time{
+
+    margin-left:auto;
+
+    font-size:12px;
+
+    color:#94A3B8;
+
+}
+
+/* Buttons */
+
+.message-footer button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 12px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#2A2D3E;
+
+    color:#E2E8F0;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+/* Hover */
+
+.message-footer button:hover{
+
+    background:#2563EB;
+
+    transform:translateY(-2px);
+
+}
+
+.copy-btn{
+
+background:none;
+
+border:none;
+
+color:#60A5FA;
+
+font-size:13px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.copy-btn:hover{
+
+color:white;
+
+transform:scale(1.05);
+
+}
+
+.message-content{
+
+line-height:1.6;
+
+}
+/* ==========================================
+        EDIT BUTTON
+========================================== */
+
+.edit-btn{
+
+    background:none;
+
+    border:none;
+
+    color:#38BDF8;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.edit-btn:hover{
+
+    color:white;
+
+    transform:scale(1.05);
+
+}
+/* =====================================
+   AI BROTHER PRO UI - PART 1
+====================================== */
+
+/* Sidebar */
+
+.sidebar{
+
+    background:#171717;
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+    box-shadow:5px 0 20px rgba(0,0,0,.25);
+
+}
+
+/* Logo */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+/* New Chat */
+
+.new-chat{
+
+    width:100%;
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.new-chat:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+/* Search */
+
+.search-box input{
+
+    background:#242424;
+
+    border:1px solid transparent;
+
+    transition:.3s;
+
+}
+
+.search-box input:focus{
+
+    border-color:#2563EB;
+
+    background:#2A2A2A;
+
+}
+
+/* History */
+
+.history-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.history-item:hover{
+
+    background:#2B2B2B;
+
+    transform:translateX(5px);
+
+}
+
+/* Active Chat */
+
+.active-chat{
+
+    background:#2563EB !important;
+
+    color:white;
+
+}
+/* =====================================
+   AI BROTHER PRO UI - PART 2
+====================================== */
+
+/* Chat Box */
+
+#chat-box{
+
+    padding:35px 50px;
+
+    scroll-behavior:smooth;
+
+}
+
+/* Bot Message */
+
+.bot-message{
+
+    background:#2A2D3E;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:18px 20px;
+
+    max-width:75%;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+    transition:.3s;
+
+}
+
+/* User Message */
+
+.user-message{
+
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+
+    border-radius:18px;
+
+    padding:18px 20px;
+
+    max-width:75%;
+
+    margin-left:auto;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+
+    transition:.3s;
+
+}
+
+/* Hover Effect */
+
+.bot-message:hover,
+.user-message:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* Message Text */
+
+.message-content{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    word-wrap:break-word;
+
+}
+
+/* Footer */
+
+.message-footer{
+
+    margin-top:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+/* Time */
+
+.message-footer .time{
+
+    margin-left:auto;
+
+    color:#94A3B8;
+
+    font-size:11px;
+
+}
+
+/* Welcome Section */
+
+.welcome{
+
+    animation:fadeWelcome .6s ease;
+
+}
+
+@keyframes fadeWelcome{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =====================================
+   AI BROTHER PRO UI - PART 3
+====================================== */
+
+/* Message Footer */
+
+.message-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:8px;
+
+    margin-top:12px;
+
+}
+
+/* Common Button Style */
+
+.copy-btn,
+.edit-btn,
+.regen-btn{
+
+    padding:7px 14px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#2E3448;
+
+    color:#E2E8F0;
+
+    font-size:12px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+}
+
+/* Hover Animation */
+
+.copy-btn:hover{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+.edit-btn:hover{
+
+    background:#0EA5E9;
+
+    color:white;
+
+}
+
+.regen-btn:hover{
+
+    background:#7C3AED;
+
+    color:white;
+
+}
+
+/* Delete Icon */
+
+.chat-delete{
+
+    width:32px;
+
+    height:32px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.chat-delete:hover{
+
+    background:#EF4444;
+
+    color:white;
+
+    transform:rotate(10deg) scale(1.15);
+
+}
+
+/* Chat Title */
+
+.chat-title{
+
+    flex:1;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+}
+/* =====================================
+   AI BROTHER PRO UI - PART 4
+====================================== */
+
+/* Entire Page */
+
+body{
+
+    background:
+    radial-gradient(circle at top,#2B4EFF 0%,#1A1A1A 35%,#111111 100%);
+
+}
+
+/* Main Chat */
+
+.main-chat{
+
+    backdrop-filter:blur(20px);
+
+}
+
+/* Top Bar */
+
+.top-bar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:rgba(23,23,23,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+/* Chat Box */
+
+#chat-box{
+
+    scroll-behavior:smooth;
+
+}
+
+/* Floating Messages */
+
+.bot-message,
+.user-message{
+
+    animation:messagePop .35s ease;
+
+}
+
+@keyframes messagePop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3B82F6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2563EB;
+
+}
+
+/* Input */
+
+#user-input{
+
+    transition:.3s;
+
+}
+
+#user-input:hover{
+
+    background:#323543;
+
+}
+
+#user-input:focus{
+
+    background:#3A3F52;
+
+    box-shadow:0 0 20px rgba(37,99,235,.35);
+
+}
+
+/* Send Button */
+
+#send-btn{
+
+    box-shadow:0 8px 20px rgba(37,99,235,.35);
+
+}
+
+#send-btn:hover{
+
+    transform:scale(1.12);
+
+    box-shadow:0 10px 28px rgba(37,99,235,.55);
+
+}
+
+/* Attachment */
+
+.icon-btn:hover{
+
+    transform:rotate(15deg);
+
+}
+
+/* Profile */
+
+.profile-avatar{
+
+    box-shadow:0 0 20px rgba(37,99,235,.45);
+
+}
+
+.profile-avatar:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* Welcome Animation */
+
+.welcome h1{
+
+    animation:glow 3s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:0 0 8px rgba(37,99,235,.25);
+
+    }
+
+    to{
+
+        text-shadow:0 0 18px rgba(37,99,235,.65);
+
+    }
+
+}
+/* ===========================
+STOP BUTTON
+=========================== */
+
+#stop-btn{
+
+    background:#EF4444;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#stop-btn:hover{
+
+    background:#DC2626;
+
+}
+#theme-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    background:#2A2D3E;
+
+    color:white;
+
+    margin-right:10px;
+
+}
+body.light{
+
+    background:#F3F4F6;
+
+    color:#111827;
+
+}
+
+body.light .sidebar{
+
+    background:white;
+
+}
+
+body.light .main-chat{
+
+    background:#F8FAFC;
+
+}
+
+body.light .top-bar{
+
+    background:white;
+
+}
+
+body.light .bot-message{
+
+    background:white;
+
+    color:black;
+
+}
+
+body.light .user-message{
+
+    background:#2563EB;
+
+}
+#export-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2A2D3E;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    margin-right:10px;
+
+    transition:.3s;
+
+}
+
+#export-btn:hover{
+
+    background:#2563EB;
+
+}
+#settings-btn{
+
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#2A2D3E;
+    color:white;
+    font-size:18px;
+    margin-right:10px;
+
+}
+
+#settings-panel{
+
+    position:absolute;
+    top:70px;
+    right:20px;
+    width:240px;
+    background:#1E293B;
+    padding:15px;
+    border-radius:12px;
+    display:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    z-index:1000;
+
+}
+
+#settings-panel button{
+
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+}
+/* ============================= */
+/* FINAL PROFESSIONAL POLISH */
+/* ============================= */
+
+.main-chat{
+
+    background:linear-gradient(180deg,#343541,#2d2f38);
+
+}
+
+.sidebar{
+
+    box-shadow:3px 0 20px rgba(0,0,0,.25);
+
+}
+
+.top-bar{
+
+    backdrop-filter:blur(10px);
+
+}
+
+.bot-message{
+
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+
+}
+
+.user-message{
+
+    box-shadow:0 8px 25px rgba(37,99,235,.30);
+
+}
+
+.history-item{
+
+    border-radius:12px;
+
+    transition:.25s;
+
+}
+
+.history-item:hover{
+
+    transform:translateX(6px);
+
+    background:#313244;
+
+}
+
+button{
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+#user-input{
+
+    transition:.3s;
+
+}
+
+#user-input:focus{
+
+    transform:scale(1.01);
+
+}
+
+.logo{
+
+    letter-spacing:.5px;
+
+}
+.chat-menu{
+
+    float:right;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    color:#94A3B8;
+
+    padding:4px 8px;
+
+    border-radius:8px;
+
+}
+
+.chat-menu:hover{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+/* ==========================
+TOAST NOTIFICATION
+========================== */
+
+#toast{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    background:#16A34A;
+
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.35s;
+
+    z-index:9999;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+#toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ================================= */
+/* AI BROTHER FINAL UI */
+/* ================================= */
+
+.logo{
+
+font-size:26px;
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+}
+
+.sidebar{
+
+box-shadow:5px 0 30px rgba(0,0,0,.25);
+
+}
+
+.top-bar{
+
+box-shadow:0 3px 15px rgba(0,0,0,.12);
+
+}
+
+.bot-message{
+
+box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+}
+
+.user-message{
+
+box-shadow:0 10px 30px rgba(37,99,235,.28);
+
+}
+
+.history-item{
+
+padding:14px;
+
+margin-bottom:10px;
+
+}
+
+.history-item:hover{
+
+transform:translateX(8px);
+
+}
+
+#chat-box{
+
+scroll-behavior:smooth;
+
+}
+
+#user-input{
+
+transition:.3s;
+
+}
+
+#user-input:focus{
+
+transform:scale(1.01);
+
+}
+
+button{
+
+transition:.25s;
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+
+.profile-avatar{
+
+box-shadow:0 5px 20px rgba(37,99,235,.35);
+
+}
+
+.suggest-btn{
+
+font-weight:600;
+
+box-shadow:0 5px 18px rgba(37,99,235,.25);
+
+}

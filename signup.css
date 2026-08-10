@@ -1,0 +1,1169 @@
+/* ===========================================
+            AI BROTHER v2
+              SIGNUP PAGE
+=========================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================================
+                RESET
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow-x:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #020617,
+        #0F172A,
+        #1E293B,
+        #111827
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 15s ease infinite;
+
+    position:relative;
+
+    color:white;
+
+}
+
+/* ===========================================
+          ANIMATED BACKGROUND
+=========================================== */
+
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ===========================================
+         BACKGROUND WRAPPER
+=========================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+}
+
+/* ===========================================
+          GLOWING BLOBS
+=========================================== */
+
+.blur{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.55;
+
+    animation:blobFloat 12s ease-in-out infinite;
+
+}
+
+.circle1{
+
+    width:340px;
+    height:340px;
+
+    background:#2563EB;
+
+    top:-120px;
+    left:-100px;
+
+}
+
+.circle2{
+
+    width:300px;
+    height:300px;
+
+    background:#7C3AED;
+
+    bottom:-120px;
+    right:-80px;
+
+    animation-delay:2s;
+
+}
+
+.circle3{
+
+    width:260px;
+    height:260px;
+
+    background:#06B6D4;
+
+    left:55%;
+    top:40%;
+
+    animation-delay:4s;
+
+}
+
+@keyframes blobFloat{
+
+0%{
+
+transform:
+translate(0,0)
+scale(1);
+
+}
+
+25%{
+
+transform:
+translate(20px,-25px)
+scale(1.05);
+
+}
+
+50%{
+
+transform:
+translate(-20px,15px)
+scale(.95);
+
+}
+
+75%{
+
+transform:
+translate(15px,-15px)
+scale(1.03);
+
+}
+
+100%{
+
+transform:
+translate(0,0)
+scale(1);
+
+}
+
+}
+
+/* ===========================================
+         FLOATING PARTICLES
+=========================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+radial-gradient(white 1px, transparent 1px);
+
+background-size:90px 90px;
+
+opacity:.12;
+
+animation:particleMove 20s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes particleMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-90px);
+
+}
+
+}
+
+/* ===========================================
+            PAGE WRAPPER
+=========================================== */
+
+.signup-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    animation:pageFade .9s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/* ===========================================
+            PREMIUM GLASS CARD
+=========================================== */
+
+.signup-card{
+
+    width:460px;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+/* Animated Border */
+
+.signup-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(37,99,235,.8),
+        rgba(124,58,237,.7),
+        rgba(6,182,212,.8)
+    );
+
+    z-index:-2;
+
+    animation:borderRotate 8s linear infinite;
+
+}
+
+.signup-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:2px;
+
+    border-radius:28px;
+
+    background:rgba(15,23,42,.94);
+
+    z-index:-1;
+
+}
+
+@keyframes borderRotate{
+
+0%{
+
+filter:hue-rotate(0deg);
+
+}
+
+100%{
+
+filter:hue-rotate(360deg);
+
+}
+
+}
+
+.signup-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+        0 35px 70px rgba(37,99,235,.25),
+
+        0 15px 40px rgba(124,58,237,.18);
+
+}
+
+/* ===========================================
+                 LOGO
+=========================================== */
+
+.logo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.logo-circle{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #7C3AED
+    );
+
+    color:white;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    box-shadow:
+
+        0 0 30px rgba(37,99,235,.45),
+
+        0 0 60px rgba(124,58,237,.30);
+
+    animation:pulseLogo 3s ease-in-out infinite;
+
+    transition:.5s;
+
+}
+
+.logo-circle:hover{
+
+    transform:rotate(360deg) scale(1.08);
+
+}
+
+@keyframes pulseLogo{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.06);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.logo h1{
+
+    margin-top:20px;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    background:linear-gradient(
+        90deg,
+        #FFFFFF,
+        #60A5FA,
+        #7C3AED,
+        #FFFFFF
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:titleFlow 6s linear infinite;
+
+}
+
+@keyframes titleFlow{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:300%;
+
+}
+
+}
+
+.logo p{
+
+    margin-top:10px;
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+    text-align:center;
+
+    line-height:24px;
+
+    animation:subtitleFade 4s ease-in-out infinite;
+
+}
+
+@keyframes subtitleFade{
+
+0%{
+
+opacity:.6;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.6;
+
+}
+}
+/* ===========================================
+              INPUT GROUP
+=========================================== */
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:22px;
+
+    transition:.3s;
+
+}
+
+.input-group:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.input-group label{
+
+    font-size:14px;
+
+    color:#E2E8F0;
+
+    margin-bottom:10px;
+
+    font-weight:500;
+
+    letter-spacing:.3px;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.35s;
+
+}
+
+.input-group input::placeholder{
+
+    color:#94A3B8;
+
+}
+
+.input-group input:hover{
+
+    border-color:#3B82F6;
+
+}
+
+.input-group input:focus{
+
+    border-color:#60A5FA;
+
+    background:rgba(255,255,255,.09);
+
+    box-shadow:
+
+    0 0 0 4px rgba(59,130,246,.15),
+
+    0 0 18px rgba(37,99,235,.25);
+
+}
+
+/* ===========================================
+           CREATE ACCOUNT BUTTON
+=========================================== */
+
+.signup-btn{
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #7C3AED
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 15px 30px rgba(37,99,235,.35);
+
+}
+
+.signup-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:120%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    transition:.8s;
+
+}
+
+.signup-btn:hover::before{
+
+    left:130%;
+
+}
+
+.signup-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 20px 40px rgba(37,99,235,.45);
+
+}
+
+.signup-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* ===========================================
+               DIVIDER
+=========================================== */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:28px 0;
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    position:relative;
+
+}
+
+.divider::before,
+
+.divider::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:42%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.divider::before{
+
+    left:0;
+
+}
+
+.divider::after{
+
+    right:0;
+
+}
+
+/* ===========================================
+             GOOGLE BUTTON
+=========================================== */
+
+.google-btn{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.google-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:120%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.18),
+
+        transparent
+
+    );
+
+    transition:.8s;
+
+}
+
+.google-btn:hover::before{
+
+    left:130%;
+
+}
+
+.google-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:rgba(255,255,255,.10);
+
+}
+
+/* ===========================================
+              LOGIN LINK
+=========================================== */
+
+.login-link{
+
+    text-align:center;
+
+    margin-top:28px;
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+}
+
+.login-link a{
+
+    color:#60A5FA;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.login-link a:hover{
+
+    color:#93C5FD;
+
+}
+/* ===========================================
+            FOOTER
+=========================================== */
+
+footer{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    letter-spacing:.8px;
+
+    animation:footerGlow 4s ease-in-out infinite;
+
+}
+
+@keyframes footerGlow{
+
+0%{
+
+opacity:.5;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.5;
+
+}
+
+}
+
+/* ===========================================
+            CUSTOM SCROLLBAR
+=========================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0F172A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#3B82F6;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#60A5FA;
+
+}
+
+/* ===========================================
+            TEXT SELECTION
+=========================================== */
+
+::selection{
+
+background:#2563EB;
+
+color:white;
+
+}
+
+/* ===========================================
+            INPUT CARET
+=========================================== */
+
+input{
+
+caret-color:#60A5FA;
+
+}
+
+/* ===========================================
+            SMOOTH LINKS
+=========================================== */
+
+a{
+
+transition:.3s;
+
+}
+
+/* ===========================================
+         MOBILE RESPONSIVE
+=========================================== */
+
+@media(max-width:768px){
+
+.signup-card{
+
+width:95%;
+
+padding:35px;
+
+border-radius:25px;
+
+}
+
+.logo-circle{
+
+width:80px;
+
+height:80px;
+
+font-size:28px;
+
+}
+
+.logo h1{
+
+font-size:28px;
+
+}
+
+.logo p{
+
+font-size:14px;
+
+}
+
+.signup-btn{
+
+font-size:15px;
+
+}
+
+.google-btn{
+
+font-size:14px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.signup-page{
+
+padding:25px 15px;
+
+}
+
+.signup-card{
+
+width:100%;
+
+padding:28px;
+
+}
+
+.logo-circle{
+
+width:70px;
+
+height:70px;
+
+font-size:24px;
+
+}
+
+.logo h1{
+
+font-size:24px;
+
+}
+
+.logo p{
+
+font-size:13px;
+
+}
+
+.input-group input{
+
+padding:14px;
+
+font-size:14px;
+
+}
+
+.signup-btn{
+
+padding:14px;
+
+font-size:14px;
+
+}
+
+.google-btn{
+
+padding:14px;
+
+font-size:14px;
+
+}
+
+}
+
+/* ===========================================
+       PAGE LOAD ANIMATION
+=========================================== */
+
+.signup-card{
+
+animation:
+
+cardAppear .8s ease,
+
+floatingCard 5s ease-in-out infinite;
+
+}
+
+@keyframes cardAppear{
+
+0%{
+
+opacity:0;
+
+transform:
+
+translateY(50px)
+
+scale(.95);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+}
+
+}
+
+@keyframes floatingCard{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}

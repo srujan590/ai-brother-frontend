@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Brother</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+
+🤖
+
+<span>
+
+AI Brother
+
+</span>
+
+</div>
+
+        <button class="new-chat" id="new-chat-btn">
+    + New Chat
+</button>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search chats...">
+        </div>
+
+       <div class="history">
+
+    <h3>Your Chats</h3>
+
+    <div id="chat-list">
+
+    </div>
+
+</div>
+
+    </aside>
+
+    <!-- Main Chat -->
+    <main class="main-chat">
+
+        <header class="top-bar">
+
+            <h2>AI Brother</h2>
+
+            <div class="profile" id="profile">
+
+    <div class="profile-avatar" id="profile-letter">
+        S
+    </div>
+
+    <div class="profile-details">
+
+        <span id="username">
+            Loading...
+        </span>
+
+        <small>
+            🟢 Online
+        </small>
+
+    </div>
+
+    <button id="logout-btn">
+        Logout
+    </button>
+    <button id="theme-btn">
+    🌙
+</button>
+<button id="export-btn" title="Export Chat">
+    📄
+</button>
+<button id="settings-btn">⚙️</button>
+
+<div id="settings-panel">
+
+    <h3>Settings</h3>
+
+    <button id="clear-chat-btn">🗑 Clear Current Chat</button>
+
+    <button id="about-btn">ℹ️ About AI Brother</button>
+
+</div>
+<hr>
+
+<p id="chat-stats">
+Chats : 0
+<br>
+Messages : 0
+</p>
+
+</div>
+        </header>
+
+        <div id="chat-box">
+
+            <div class="welcome">
+
+    <div class="welcome-icon">
+        🤖
+    </div>
+
+    <h1 id="welcome-message">
+        AI Brother
+    </h1>
+
+    <p>
+        Your Personal AI Assistant
+    </p>
+
+    <div class="suggestions">
+
+        <button class="suggest-btn">
+            💻 Coding
+        </button>
+
+        <button class="suggest-btn">
+            📚 AI
+        </button>
+
+        <button class="suggest-btn">
+            🚀 Projects
+        </button>
+
+        <button class="suggest-btn">
+            💼 Placements
+        </button>
+
+    </div>
+
+</div>
+
+        </div>
+
+       <div class="input-area">
+
+    <!-- File Upload -->
+    <label for="file-upload" class="icon-btn">
+        📎
+    </label>
+    <button class="icon-btn" id="mic-btn">
+    🎤
+</button>
+
+    <input
+        type="file"
+        id="file-upload"
+        hidden
+        accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
+    >
+
+    <!-- Message -->
+    <textarea
+    id="user-input"
+    placeholder="Message AI Brother..."
+    rows="1"
+></textarea>
+
+    <button type="button" id="send-btn">
+    ➜
+</button>
+    <!-- Stop -->
+    <button id="stop-btn" style="display:none;">
+        ⏹ Stop
+    </button>
+
+</div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

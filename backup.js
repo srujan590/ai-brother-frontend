@@ -430,7 +430,7 @@ showTyping();
 
         const response = await fetch(
 
-            `http://https://ai-brother-backend.onrender.com/chat?message=${encodeURIComponent(message)}`
+            `https://ai-brother-backend.onrender.com/chat?message=${encodeURIComponent(message)}`
 
         );
 

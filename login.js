@@ -22,7 +22,7 @@ loginForm.addEventListener("submit", async function (e) {
 
     try {
 
-        const response = await fetch("http://https://ai-brother-backend.onrender.com/login", {
+        const response = await fetch("https://ai-brother-backend.onrender.com/login", {
 
             method: "POST",
 

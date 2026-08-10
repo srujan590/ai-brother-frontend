@@ -22,7 +22,7 @@ signupForm.addEventListener("submit", async function (e) {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/signup", {
+        const response = await fetch("http://https://ai-brother-backend.onrender.com/signup", {
 
             method: "POST",
 
